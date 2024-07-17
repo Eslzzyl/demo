@@ -1,0 +1,8 @@
+[
+  {
+    "model_name": "Zero-DCE",
+    "class_name": "ZeroDCE",
+    "pretrained_path": "./pretrained/ZeroDCE.pth",
+    "task": "low-light-enhancement"
+  }
+]

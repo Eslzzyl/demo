@@ -1,0 +1,53 @@
+[
+  {
+    "model_name": "MPRNet-deraining",
+    "class_name": "MPRNet",
+    "pretrained_path": "./pretrained/MPRNet/MPRNet_deraining.pth",
+    "state_dict_mapping": "state_dict",
+    "init_params": {
+      "n_feat": 40,
+      "scale_unetfeats": 20,
+      "scale_orsnetfeats": 16,
+      "num_cab": 8,
+      "kernel_size": 3,
+      "reduction": 4,
+      "bias": false
+    },
+    "resize_factor": 8,
+    "task": "deraining"
+  },
+  {
+    "model_name": "MPRNet-denosing",
+    "class_name": "MPRNet",
+    "pretrained_path": "./pretrained/MPRNet/MPRNet_denoising.pth",
+    "state_dict_mapping": "state_dict",
+    "init_params": {
+      "n_feat": 80,
+      "scale_unetfeats": 48,
+      "scale_orsnetfeats": 32,
+      "num_cab": 8,
+      "kernel_size": 3,
+      "reduction": 4,
+      "bias": false
+    },
+    "resize_factor": 8,
+    "task": "denoising"
+  },
+  {
+    "model_name": "MPRNet-motion-deblurring",
+    "class_name": "MPRNet",
+    "pretrained_path": "./pretrained/MPRNet/MPRNet_deblurring.pth",
+    "state_dict_mapping": "state_dict",
+    "init_params": {
+      "n_feat": 96,
+      "scale_unetfeats": 48,
+      "scale_orsnetfeats": 32,
+      "num_cab": 8,
+      "kernel_size": 3,
+      "reduction": 4,
+      "bias": false
+    },
+    "resize_factor": 8,
+    "task": "motion-deblurring"
+  }
+]

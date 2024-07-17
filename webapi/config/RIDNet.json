@@ -1,0 +1,8 @@
+[
+  {
+    "model_name": "RIDNet",
+    "class_name": "RIDNet",
+    "pretrained_path": "./pretrained/RIDNet.pt",
+    "task": "denoising"
+  }
+]

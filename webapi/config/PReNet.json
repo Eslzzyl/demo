@@ -1,0 +1,8 @@
+[
+  {
+    "model_name": "PReNet-Rain100L",
+    "class_name": "PReNet",
+    "pretrained_path": "./pretrained/PReNet_Rain100L.pth",
+    "task": "deraining"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "model_name": "Restormer-deraining",
+    "class_name": "Restormer",
+    "pretrained_path": "./pretrained/Restormer/Restormer_deraining.pth",
+    "state_dict_mapping": "params",
+    "init_params": {
+      "dim": 48,
+      "num_blocks": [
+        4,
+        6,
+        6,
+        8
+      ],
+      "num_refinement_blocks": 4,
+      "heads": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "ffn_expansion_factor": 2.66,
+      "bias": false,
+      "LayerNorm_type": "WithBias",
+      "dual_pixel_task": false
+    },
+    "resize_factor": 8,
+    "task": "deraining"
+  },
+  {
+    "model_name": "Restormer-real-denoising",
+    "class_name": "Restormer",
+    "pretrained_path": "./pretrained/Restormer/Restormer_real_denoising.pth",
+    "state_dict_mapping": "params",
+    "init_params": {
+      "dim": 48,
+      "num_blocks": [
+        4,
+        6,
+        6,
+        8
+      ],
+      "num_refinement_blocks": 4,
+      "heads": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "ffn_expansion_factor": 2.66,
+      "bias": false,
+      "LayerNorm_type": "BiasFree",
+      "dual_pixel_task": false
+    },
+    "resize_factor": 8,
+    "task": "denoising"
+  },
+  {
+    "model_name": "Restormer-motion-deblurring",
+    "class_name": "Restormer",
+    "pretrained_path": "./pretrained/Restormer/Restormer_motion_deblurring.pth",
+    "state_dict_mapping": "params",
+    "init_params": {
+      "dim": 48,
+      "num_blocks": [
+        4,
+        6,
+        6,
+        8
+      ],
+      "num_refinement_blocks": 4,
+      "heads": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "ffn_expansion_factor": 2.66,
+      "bias": false,
+      "LayerNorm_type": "WithBias",
+      "dual_pixel_task": false
+    },
+    "resize_factor": 8,
+    "task": "motion-deblurring"
+  }
+]

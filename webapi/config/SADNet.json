@@ -1,0 +1,9 @@
+[
+  {
+    "model_name": "SADNet-real",
+    "class_name": "SADNet",
+    "pretrained_path": "./pretrained/SADNet_real.pth",
+    "resize_factor": 8,
+    "task": "denoising"
+  }
+]

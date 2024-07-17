@@ -1,0 +1,9 @@
+[
+  {
+    "model_name": "CycleISP",
+    "class_name": "CycleISP",
+    "pretrained_path": "./pretrained/CycleISP_sidd_rgb.pth",
+    "state_dict_mapping": "state_dict",
+    "task": "denoising"
+  }
+]

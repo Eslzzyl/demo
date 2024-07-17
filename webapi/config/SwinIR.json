@@ -1,0 +1,96 @@
+[
+  {
+    "model_name": "SwinIR-lightweightSR-x2",
+    "class_name": "SwinIR",
+    "pretrained_path": "./pretrained/SwinIR/SwinIR_lightweightSR_DIV2K_s64w8_SwinIR-S_x2.pth",
+    "state_dict_mapping": "params",
+    "init_params": {
+      "upscale": 2,
+      "in_chans": 3,
+      "img_size": 64,
+      "window_size": 8,
+      "img_range": 1,
+      "depths": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "embed_dim": 60,
+      "num_heads": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "mlp_ratio": 2,
+      "upsampler": "pixelshuffledirect",
+      "resi_connection": "1conv"
+    },
+    "task": "super-resolution"
+  },
+  {
+    "model_name": "SwinIR-lightweightSR-x4",
+    "class_name": "SwinIR",
+    "pretrained_path": "./pretrained/SwinIR/SwinIR_lightweightSR_DIV2K_s64w8_SwinIR-S_x4.pth",
+    "state_dict_mapping": "params",
+    "init_params": {
+      "upscale": 4,
+      "in_chans": 3,
+      "img_size": 64,
+      "window_size": 8,
+      "img_range": 1,
+      "depths": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "embed_dim": 60,
+      "num_heads": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "mlp_ratio": 2,
+      "upsampler": "pixelshuffledirect",
+      "resi_connection": "1conv"
+    },
+    "task": "super-resolution"
+  },
+  {
+    "model_name": "SwinIR-classicalSR-x4-DIV2K",
+    "class_name": "SwinIR",
+    "pretrained_path": "./pretrained/SwinIR/SwinIR_classicalSR_DIV2K_s48w8_SwinIR-M_x4.pth",
+    "state_dict_mapping": "params",
+    "init_params": {
+      "upscale": 4,
+      "in_chans": 3,
+      "img_size": 48,
+      "window_size": 8,
+      "img_range": 1,
+      "depths": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "embed_dim": 180,
+      "num_heads": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "mlp_ratio": 2,
+      "upsampler": "pixelshuffle",
+      "resi_connection": "1conv"
+    },
+    "task": "super-resolution"
+  }
+]

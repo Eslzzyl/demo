@@ -1,0 +1,9 @@
+[
+  {
+    "model_name": "MIMO-UNet",
+    "class_name": "MIMOUNet",
+    "pretrained_path": "./pretrained/MIMO-UNet.pkl",
+    "state_dict_mapping": "model",
+    "task": "motion-deblurring"
+  }
+]

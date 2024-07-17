@@ -1,0 +1,9 @@
+[
+  {
+    "model_name": "Zero-DCE-Enhanced",
+    "class_name": "ZeroDCEpp",
+    "pretrained_path": "./pretrained/ZeroDCEpp.pth",
+    "resize_factor": 12,
+    "task": "low-light-enhancement"
+  }
+]

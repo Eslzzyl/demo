@@ -78,7 +78,7 @@ class PReNet(nn.Module):
             nn.Conv2d(32, 3, 3, 1, 1),
         )
 
-    def forward(self, input):
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
         batch_size, row, col = input.size(0), input.size(2), input.size(3)
 
         x = input
@@ -89,7 +89,7 @@ class PReNet(nn.Module):
             h = h.cuda()
             c = c.cuda()
 
-        x_list = []
+        # x_list = []
         for i in range(self.iteration):
             # 将上一轮结果 x_t 和带雨图像 y 拼接
             x = torch.cat((input, x), 1)
@@ -117,6 +117,7 @@ class PReNet(nn.Module):
             x = self.conv(x)
 
             x = x + input
-            x_list.append(x)
+            # x_list.append(x)
 
-        return x, x_list
+        # return x, x_list
+        return x

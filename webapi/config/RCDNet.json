@@ -1,0 +1,8 @@
+[
+  {
+    "model_name": "RCDNet-Rain100L",
+    "class_name": "RCDNet",
+    "pretrained_path": "./pretrained/RCDNet_Rain100L.pt",
+    "task": "deraining"
+  }
+]
