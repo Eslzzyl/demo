@@ -17,7 +17,9 @@ def get_model_list(task):
         return gr.Dropdown(choices=m_list, value=m_list[0])
 
 
-def request(image: Image, model_name: str) -> Image:
+def request(image, model_name: str) -> Image:
+    if image is None:
+        raise gr.Error("未选择图片")
     # 将PIL.Image转换为字节流
     image_byte_array = BytesIO()
     image.save(image_byte_array, format='JPEG')
@@ -34,7 +36,7 @@ def request(image: Image, model_name: str) -> Image:
         response = requests.put(request_url, files=files)
         if response.status_code == 200:
             img_data = response.content
-            img = Image.open(BytesIO(img_data))
+            img = Image.open(BytesIO(img_data), formats=['JPEG'])
             return img
         else:
             raise gr.Error(f"请求失败，状态码: {response.status_code}, 消息: {response.text}", duration=10)
@@ -59,7 +61,7 @@ with gr.Blocks(title='Gradio 演示') as demo:
         with gr.Column():
             with gr.Row():
                 input_image = gr.Image(type='pil', label='输入图片', height="45%")
-                output_image = gr.Image(type='pil', label='复原效果图', height="45%")
+                output_image = gr.Image(type='pil', label='复原效果图', height="45%", interactive=True, sources=[])
             example = gr.Examples(examples=example_list, label='示例图片', inputs=[input_image])
             with gr.Row():
                 task_dropdown = gr.Dropdown(choices=task_list, value="default", multiselect=False, label="选择任务")
@@ -67,7 +69,7 @@ with gr.Blocks(title='Gradio 演示') as demo:
                                              label="选择复原模型")
             with gr.Row():
                 submit_btn = gr.Button(value='提交', variant='primary')
-                clear_btn = gr.Button(value='清除')
+                clear_btn = gr.ClearButton(value='清除', components=[input_image, output_image])
 
         task_dropdown.input(fn=get_model_list, inputs=[task_dropdown], outputs=[model_dropdown])
         submit_btn.click(fn=request, inputs=[input_image, model_dropdown], outputs=[output_image])

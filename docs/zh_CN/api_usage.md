@@ -69,8 +69,7 @@ WebAPI 程序启动时，将自动读取 `config` 目录下的所有 `.json` 文
   {"model_name":"MPRNet-denosing","task":"denoising"},
   {"model_name":"Restormer-deraining","task":"deraining"},
   {"model_name":"PReNet-Rain100L","task":"deraining"},
-  {"model_name":"Zero-DCE",
-  "task":"low-light-enhancement"},
+  {"model_name":"Zero-DCE","task":"low-light-enhancement"},
   {"model_name":"MIMO-UNet","task":"motion-deblurring"},
   {"model_name":"RIDNet","task":"denoising"}
 ]
