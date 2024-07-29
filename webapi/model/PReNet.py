@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.autograd import Variable
 
 
 class PReNet(nn.Module):
@@ -82,12 +81,14 @@ class PReNet(nn.Module):
         batch_size, row, col = input.size(0), input.size(2), input.size(3)
 
         x = input
-        h = Variable(torch.zeros(batch_size, 32, row, col))
-        c = Variable(torch.zeros(batch_size, 32, row, col))
+        h = torch.zeros(batch_size, 32, row, col)
+        c = torch.zeros(batch_size, 32, row, col)
 
         if self.use_GPU:
-            h = h.cuda()
-            c = c.cuda()
+            last_gpu_index = torch.cuda.device_count() - 1
+            device = torch.device(f"cuda:{last_gpu_index}")
+            h = h.to(device)
+            c = c.to(device)
 
         # x_list = []
         for i in range(self.iteration):
